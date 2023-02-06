@@ -1,3 +1,10 @@
 body {
   color: green;
+  font-size: 100px;
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+/* icons */
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
