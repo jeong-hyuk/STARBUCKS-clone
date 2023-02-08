@@ -78,6 +78,30 @@ header {
   color: white;
   text-decoration: underline;
 }
+
+.btn--white {
+  border-color: #fff;
+  color: #fff;
+  transition: 0.6s;
+  cursor: pointer;
+}
+.btn--white:hover {
+  background-color: #fff;
+  color: black;
+  text-decoration: underline;
+}
+
+.btn--black {
+  border-color: #000;
+  color: #000;
+  transition: 0.6s;
+  cursor: pointer;
+}
+.btn--black:hover {
+  background-color: #000;
+  color: white;
+  text-decoration: underline;
+}
 /* header */
 header > div > div {
   height: 120px;
@@ -568,8 +592,8 @@ header .badges .badge img {
   opacity: 0;
   transition: 2.5s;
 }
-.elsalvador:active .inner .elsalvador__item,
-.elsalvador:active .inner .elsalvador__contents {
+.elsalvador:hover .inner .elsalvador__item,
+.elsalvador:hover .inner .elsalvador__contents {
   opacity: 1;
   transform: translateX(0);
 }
@@ -610,8 +634,8 @@ header .badges .badge img {
   opacity: 0;
 }
 
-.ethiopia:active::before,
-.ethiopia:active::after {
+.ethiopia:hover::before,
+.ethiopia:hover::after {
   transition: 1.5s;
   opacity: 1;
 }
@@ -630,7 +654,7 @@ header .badges .badge img {
   left: -500px;
   opacity: 0;
 }
-.ethiopia:active .inner .ethiopia__item {
+.ethiopia:hover .inner .ethiopia__item {
   transition: 1.5s;
   transition-delay: 0.8s;
   opacity: 1;
@@ -639,4 +663,168 @@ header .badges .badge img {
   position: absolute;
   top: 260px;
   left: 250px;
+}
+
+.favorite {
+  position: relative;
+  background-image: url("../images/fav_bg.png");
+  background-attachment: fixed;
+  height: 800px;
+  overflow: hidden;
+  background-size: cover;
+}
+.favorite .inner {
+  position: relative;
+}
+.favorite .inner .fav__content1 {
+  transform: translateX(-700px);
+  position: absolute;
+  top: 140px;
+  left: 110px;
+  opacity: 0;
+  transition: 1.5s;
+}
+.favorite:hover .inner .fav__content1 {
+  transform: translateX(0);
+  opacity: 1;
+}
+.favorite .inner .fav__content2 {
+  transform: translateX(-700px);
+  position: absolute;
+  top: 400px;
+  left: 0;
+  opacity: 0;
+  transition: 1.9s;
+}
+.favorite:hover .inner .fav__content2 {
+  transform: translateX(0);
+  opacity: 1;
+}
+.favorite .inner .fav__item {
+  position: absolute;
+  width: 912px;
+  left: 450px;
+  top: 80px;
+}
+.favorite .inner .btn.btn--white {
+  position: absolute;
+  top: 600px;
+  left: 240px;
+  opacity: 0;
+}
+.favorite:hover .inner .btn.btn--white {
+  transition: 1.3s;
+  opacity: 1;
+}
+
+/* magazine */
+.magazine {
+  position: relative;
+  background-image: url("../images/magazine_bg.png");
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  height: 400px;
+  z-index: 0;
+}
+.magazine .inner {
+  position: relative;
+}
+.magazine .inner .magazine__content {
+  position: absolute;
+  left: 205px;
+  top: 135px;
+  z-index: 1;
+}
+.magazine .inner .magazine__item {
+  position: absolute;
+  width: 348px;
+  top: 0;
+  right: 67px;
+  z-index: 0;
+  opacity: 0;
+  transition: 1.5s;
+}
+.magazine:hover .inner .magazine__item {
+  opacity: 1;
+}
+.magazine .inner .btn.btn--black {
+  position: absolute;
+  left: 342px;
+  top: 265px;
+}
+
+/* find store */
+.find__store {
+  position: relative;
+  height: 400px;
+  background-image: url("../images/store_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+.find__store .inner {
+  position: relative;
+  height: 400px;
+  z-index: 0;
+}
+.find__store .inner .store__item1 {
+  position: absolute;
+  width: 366px;
+  left: 70px;
+}
+.find__store .inner .store__item2 {
+  position: absolute;
+  width: 228px;
+  left: 300px;
+  top: 149px;
+}
+.find__store .inner .store__item3 {
+  position: absolute;
+  top: -60px;
+  bottom: 0;
+  left: 430px;
+  z-index: -3;
+}
+.find__store .inner .store__item4 {
+  position: absolute;
+  right: -60px;
+  top: 298px;
+}
+.find__store .inner .store__content1 {
+  position: absolute;
+  right: 72px;
+  top: 100px;
+  transform: translateX(1000px);
+  transition: 3s;
+  opacity: 0;
+}
+.find__store:hover .inner .store__content1 {
+  transform: translateX(0);
+  opacity: 1;
+}
+.find__store .inner .store__content2 {
+  position: absolute;
+  right: 70px;
+  top: 168px;
+  transform: translateX(1000px);
+  transition: 2.5s;
+  opacity: 0;
+}
+.find__store:hover .inner .store__content2 {
+  transform: translateX(0);
+  opacity: 1;
+}
+.find__store .inner .btn.btn--black {
+  position: absolute;
+  right: 338px;
+  top: 290px;
+  transform: translateX(1000px);
+  transition: 2s;
+  opacity: 0;
+}
+.find__store:hover .inner .btn.btn--black {
+  transform: translateX(0);
+  transition: transform 3s, background-color 0.6s, text-decoration 0.6s; /*속성 특성 시간*/
+  opacity: 1;
 }
