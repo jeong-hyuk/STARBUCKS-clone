@@ -589,6 +589,7 @@ header .badges .badge img {
   background-image: url("../images/ethiopia_before.png");
   background-size: cover;
   background-repeat: no-repeat;
+  opacity: 0;
 }
 .ethiopia {
   position: relative;
@@ -606,7 +607,15 @@ header .badges .badge img {
   height: 404px;
   background-size: cover;
   background-repeat: no-repeat;
+  opacity: 0;
 }
+
+.ethiopia:active::before,
+.ethiopia:active::after {
+  transition: 1.5s;
+  opacity: 1;
+}
+
 .ethiopia .inner {
   position: relative;
 }
@@ -619,6 +628,12 @@ header .badges .badge img {
 .ethiopia .inner .ethiopia__item {
   position: absolute;
   left: -500px;
+  opacity: 0;
+}
+.ethiopia:active .inner .ethiopia__item {
+  transition: 1.5s;
+  transition-delay: 0.8s;
+  opacity: 1;
 }
 .ethiopia .inner .btn.btn--gold {
   position: absolute;
