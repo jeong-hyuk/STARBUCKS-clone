@@ -7,7 +7,6 @@
 body {
   color: #333;
   font-size: 16px;
-  height: 5000px;
   font-weight: 400;
   line-height: 1.4;
   font-family: "Nanum Gothic", sans-serif;
@@ -827,4 +826,114 @@ header .badges .badge img {
   transform: translateX(0);
   transition: transform 3s, background-color 0.6s, text-decoration 0.6s; /*속성 특성 시간*/
   opacity: 1;
+}
+
+/* footer */
+footer {
+  position: relative;
+  background-color: #2c2a29;
+
+  padding: 30px 0;
+}
+footer .inner {
+}
+
+/* footer menu */
+footer .inner .footer__menu {
+  position: relative;
+  display: flex;
+}
+footer .inner .footer__menu .left {
+  width: 90%;
+}
+footer .inner .footer__menu .left .menu {
+}
+footer .inner .footer__menu .left .menu > li {
+  display: flex;
+  justify-content: start;
+}
+footer .inner .footer__menu .left .menu > li > ul {
+  margin-top: 10px;
+  color: white;
+  margin-right: 90px;
+}
+footer .inner .footer__menu .left .menu > li > ul > a:hover {
+  text-decoration: underline;
+}
+footer .inner .footer__menu .left .menu > li > ul > li:hover {
+  text-decoration: underline;
+}
+footer .inner .footer__menu .left .menu > li > ul > a {
+  color: #999999;
+  display: flex;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+footer .inner .footer__menu .left .menu > li > ul > li {
+  font-size: 12px;
+  margin-bottom: 7px;
+}
+footer .inner .footer__menu .right {
+  width: 10%;
+  /* position: relative; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  /* float: right;  자신이 존재할 수있는 컨테이너 내부에서 오른쪽으로 붙음*/
+}
+footer .inner .footer__menu .right img {
+}
+
+/* footer sub menu */
+footer .inner .footer__sub-menu {
+  position: relative;
+  margin-top: 70px;
+}
+footer .inner .footer__sub-menu ul {
+  display: flex;
+  justify-content: center;
+}
+footer .inner .footer__sub-menu ul > li {
+}
+
+footer .inner .footer__sub-menu ul > li:first-child > a {
+  color: greenyellow;
+}
+footer .inner .footer__sub-menu ul > li > a {
+  font-size: 12px;
+  color: white;
+  right: 20px;
+  margin: 0 10px;
+}
+footer .inner .footer__sub-menu ul > li > a:hover {
+  text-decoration: underline;
+}
+footer .inner .footer__sub-menu ul .contour {
+}
+
+/* footer btn */
+footer .inner .footer__btn {
+  display: flex;
+  justify-content: center;
+}
+footer .inner .footer__btn .btn.btn--white {
+  margin-top: 10px;
+  margin-right: 5px;
+}
+footer .inner .footer__btn .btn.btn--white:hover {
+  text-decoration: underline;
+  background-color: transparent;
+  color: white;
+}
+
+/* footer copylight */
+footer .inner .footer__copylight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .inner .footer__copylight > p {
+  font-size: 12px;
+  margin-top: 20px;
+  color: #999999;
 }
