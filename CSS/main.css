@@ -177,6 +177,9 @@ header .inner .sub-menu .search > input:focus {
 header .inner .sub-menu .search > .material-symbols-outlined {
   position: absolute;
   margin: auto;
+  text-align: center;
+  width: 36px;
+  cursor: pointer;
   top: 0;
   bottom: 0;
   right: 3px;
@@ -351,6 +354,11 @@ header .badges .badge img {
   flex-wrap: wrap;
   top: 145px;
   left: -60px;
+  opacity: 0;
+}
+.visual.animate .inner .slogan {
+  transition: 0.4s;
+  opacity: 1;
 }
 .visual .inner .slogan img {
   display: block;
@@ -369,18 +377,37 @@ header .badges .badge img {
   width: 290px;
   top: 120px;
   left: 340px;
+  opacity: 0;
 }
+.visual.animate .inner .item-1.image {
+  transition: 0.4s;
+  opacity: 1;
+  transition-delay: 0.4s;
+}
+
 .visual .inner .item-2.image {
   position: absolute;
   width: 310px;
   top: 208px;
   left: 538px;
+  opacity: 0;
+}
+.visual.animate .inner .item-2.image {
+  transition: 0.4s;
+  opacity: 1;
+  transition-delay: 0.8s;
 }
 .visual .inner .item-3.image {
   position: absolute;
   width: 310px;
   top: 116px;
   left: 762px;
+  opacity: 0;
+}
+.visual.animate .inner .item-3.image {
+  transition: 0.4s;
+  opacity: 1;
+  transition-delay: 1.2s;
 }
 
 /* notice */
@@ -427,11 +454,18 @@ header .badges .badge img {
   font-weight: bold;
   font-size: 16px;
 }
-.notice .notice-line .inner .inner__left div {
+.notice .notice-line .inner .inner__left .swiper {
+  z-index: 0;
   position: absolute;
+  height: 62px;
   left: 80px;
   font-size: 14px;
 }
+.notice .notice-line .inner .inner__left .swiper .swiper-wrapper .swiper-slide {
+  height: 62px;
+  line-height: 62px;
+}
+
 .notice .notice-line .inner .inner__left a {
   color: white;
   position: absolute;
@@ -458,12 +492,91 @@ header .badges .badge img {
   color: black;
   position: absolute;
   right: 20px;
+  transition: 0.4s;
+}
+.notice .notice-line .inner .inner__right a.show {
+  transform: rotate(180deg);
 }
 .notice .notice-line .inner .inner__right a span {
   font-size: 36px;
   display: block;
 }
 
+/* promotion */
+.notice .promotion {
+  z-index: 0;
+  position: relative;
+  height: 658px;
+  background-color: #f6f5ef;
+  overflow: hidden;
+  transition: height 0.4s;
+}
+.notice .promotion.hide {
+  height: 0px;
+}
+
+.notice .promotion .swiper {
+  position: absolute;
+  width: calc(819px * 3 + 20px);
+  height: 553px;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40px;
+}
+.notice .promotion .swiper .swiper-wrapper {
+}
+.notice .promotion .swiper .swiper-wrapper .swiper-slide {
+  opacity: 0.5;
+  transition: 0.5s;
+}
+.notice .promotion .swiper .swiper-wrapper .swiper-slide-active {
+  opacity: 1;
+}
+.notice .promotion .swiper .swiper-wrapper .swiper-slide .btn {
+  position: absolute;
+  width: 150px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.notice .promotion .swiper-pagination {
+}
+.notice .promotion .swiper-button-prev,
+.notice .promotion .swiper-button-next {
+  position: absolute;
+  top: 270px;
+  width: 55px;
+  height: 55px;
+  border: 2px solid #333;
+  color: #333;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.notice .promotion .swiper-button-prev::after,
+.notice .promotion .swiper-button-next::after {
+  font-size: 24px;
+}
+.notice .promotion .swiper-button-prev {
+  left: 50%;
+  transform: translateX(-500px);
+}
+.notice .promotion .swiper-button-next {
+  right: 50%;
+  transform: translateX(500px);
+}
+.notice .promotion .swiper-pagination {
+}
+.notice .promotion .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+}
+.notice .promotion .swiper-pagination-bullet-active {
+  background-image: url("../images/promotion_on.png");
+  background-size: cover;
+  background-color: transparent;
+}
 /* rewards */
 .rewards {
   position: relative;
@@ -591,8 +704,8 @@ header .badges .badge img {
   opacity: 0;
   transition: 2.5s;
 }
-.elsalvador:hover .inner .elsalvador__item,
-.elsalvador:hover .inner .elsalvador__contents {
+.elsalvador.animate .inner .elsalvador__item,
+.elsalvador.animate .inner .elsalvador__contents {
   opacity: 1;
   transform: translateX(0);
 }
@@ -633,8 +746,8 @@ header .badges .badge img {
   opacity: 0;
 }
 
-.ethiopia:hover::before,
-.ethiopia:hover::after {
+.ethiopia.animate::before,
+.ethiopia.animate::after {
   transition: 1.5s;
   opacity: 1;
 }
@@ -648,12 +761,13 @@ header .badges .badge img {
   top: 120px;
   left: 0;
 }
+
 .ethiopia .inner .ethiopia__item {
   position: absolute;
   left: -500px;
   opacity: 0;
 }
-.ethiopia:hover .inner .ethiopia__item {
+.ethiopia.animate .inner .ethiopia__item {
   transition: 1.5s;
   transition-delay: 0.8s;
   opacity: 1;
@@ -683,7 +797,7 @@ header .badges .badge img {
   opacity: 0;
   transition: 1.5s;
 }
-.favorite:hover .inner .fav__content1 {
+.favorite.animate .inner .fav__content1 {
   transform: translateX(0);
   opacity: 1;
 }
@@ -695,7 +809,7 @@ header .badges .badge img {
   opacity: 0;
   transition: 1.9s;
 }
-.favorite:hover .inner .fav__content2 {
+.favorite.animate .inner .fav__content2 {
   transform: translateX(0);
   opacity: 1;
 }
@@ -711,7 +825,7 @@ header .badges .badge img {
   left: 240px;
   opacity: 0;
 }
-.favorite:hover .inner .btn.btn--white {
+.favorite.animate .inner .btn.btn--white {
   transition: 1.3s;
   opacity: 1;
 }
@@ -743,7 +857,7 @@ header .badges .badge img {
   opacity: 0;
   transition: 1.5s;
 }
-.magazine:hover .inner .magazine__item {
+.magazine.animate .inner .magazine__item {
   opacity: 1;
 }
 .magazine .inner .btn.btn--black {
@@ -798,7 +912,7 @@ header .badges .badge img {
   transition: 3s;
   opacity: 0;
 }
-.find__store:hover .inner .store__content1 {
+.find__store.animate .inner .store__content1 {
   transform: translateX(0);
   opacity: 1;
 }
@@ -810,7 +924,7 @@ header .badges .badge img {
   transition: 2.5s;
   opacity: 0;
 }
-.find__store:hover .inner .store__content2 {
+.find__store.animate .inner .store__content2 {
   transform: translateX(0);
   opacity: 1;
 }
@@ -822,7 +936,7 @@ header .badges .badge img {
   transition: 2s;
   opacity: 0;
 }
-.find__store:hover .inner .btn.btn--black {
+.find__store.animate .inner .btn.btn--black {
   transform: translateX(0);
   transition: transform 3s, background-color 0.6s, text-decoration 0.6s; /*속성 특성 시간*/
   opacity: 1;
