@@ -133,7 +133,7 @@ window.addEventListener("scroll", function () {
     favoriteSection.classList.add("animate");
   }
 
-  if (window.scrollY > 1500) {
+  if (window.scrollY > 1200) {
     const magazineSection = document.querySelector(".magazine");
     magazineSection.classList.add("animate");
   }
